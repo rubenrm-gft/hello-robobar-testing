@@ -50,5 +50,28 @@ public class CartSuiteTest {
         // Total must be €2.50
         assertEquals(cartPage.totalField.getText(), "€2.50");
     }
+    @Test
+    public void beerTest() {
+        // Add o cola
+        cartPage.addBeerButton.click();
+        // Total must be €1.25
+        assertEquals(cartPage.totalField.getText(), "€2.00");
+        // Add o cola
+        cartPage.addBeerButton.click();
+        // Total must be €2.50
+        assertEquals(cartPage.totalField.getText(), "€4.00");
+    }
+
+    @Test
+    public void wineTest() {
+        // Add o cola
+        cartPage.addWineButton.click();
+        // Total must be €1.25
+        assertEquals(cartPage.totalField.getText(), "€3.00");
+        // Add o cola
+        cartPage.addWineButton.click();
+        // Total must be €2.50
+        assertEquals(cartPage.totalField.getText(), "€6.00");
+    }
 
 }
